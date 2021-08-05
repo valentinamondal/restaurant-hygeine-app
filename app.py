@@ -39,7 +39,7 @@ serialize_path = './pipeline.joblib'
 pipeline_serialized = load(serialize_path) 
 
 app.layout = html.Div(children=[
-    html.H1('RESTAURANT HYGEINE PREDICTION', style={'backgroundColor':'cream'}), 
+    html.H1('RESTAURANT HYGIENE PREDICTION', style={'textAlign': 'center','backgroundColor':'cornsilk','color':'saddlebrown'}), 
 
     html.Div([
         html.P('Fill out the below sections and receive the hygiene prediction for the restaurant that matches the criteria'),
@@ -54,7 +54,7 @@ app.layout = html.Div(children=[
         dcc.Textarea(
                 id="review_text", 
                 placeholder="Please type in your review here.",
-                value="Please type in your review here.",
+                value="Please type in review here.",
                 style={'width': '67%', 'height': '100px'},
             ),
         html.Br(), html.Br(),
