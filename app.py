@@ -39,17 +39,17 @@ serialize_path = './pipeline.joblib'
 pipeline_serialized = load(serialize_path) 
 
 app.layout = html.Div(children=[
-    html.H1('Restaurant Hygiene Prediction'), 
+    html.H1('RESTAURANT HYGEINE PREDICTION'), 
 
     html.Div([
-        html.P('Instructions: Please fill out the following inputs to receive a prediction of how likely a restaurant is to pass a hygiene inspection.'),
+        html.P('Fill out the below sections and receive the hygiene prediction for the restaurant that matches the criteria'),
         html.Br(),
     ]),
 
     ##### Input Section #####
     html.Div([
-        ### Text Input
-        html.I("Please enter your review of the restaurant in the text box."),
+        ### Review
+        html.I("Please enter the review of the restaurant"),
         html.Br(),
         dcc.Textarea(
                 id="review_text", 
@@ -60,11 +60,11 @@ app.layout = html.Div(children=[
         html.Br(), html.Br(),
 
         ### Cuisine Type
-        html.I("Please select the relevant cuisine types from the following dropdown."),
+        html.I("Please select the relevant cuisine types from the dropdown."),
         dcc.Dropdown(
                 id='cuisine_type',
                 options=[{'label': i, 'value': i} for i in unique_cuisines],
-                value='Taiwanese',
+                value='',
                 style={'width': '50%'},
                 searchable=True,
                 clearable=True,
@@ -73,21 +73,21 @@ app.layout = html.Div(children=[
         html.Br(),
         
         ### Zipcode Input
-        html.I("Please select the zipcode from the following dropdown."),
+        html.I("Please select the zipcode from the dropdown."),
         dcc.Dropdown(
                 id='zipcode',
                 options=[{'label': i, 'value': i} for i in unique_zipcodes],
-                value='98101',
+                value='',
                 style={'width': '50%'}
             ),
         html.Br(),
 
         ### Average Rating Input
-        html.I("Please enter your average rating for the restaurant."),
+        html.I("Please enter average rating for the restaurant."),
         dcc.RadioItems(
                 id='average_rating',
                 options=[{'label': i, 'value': i} for i in ['1', '2', '3', '4', '5']],
-                value='3',
+                value='',
                 labelStyle={'display': 'inline-block'}
             ),
         html.Br(),
