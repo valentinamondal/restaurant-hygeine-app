@@ -38,8 +38,8 @@ unique_cuisines = ['Afghan', 'African', 'American (New)', 'American (Traditional
 serialize_path = './pipeline.joblib'
 pipeline_serialized = load(serialize_path) 
 
-app.layout = html.Div(children=[
-    html.H1('RESTAURANT HYGIENE PREDICTION', style={'textAlign': 'center','backgroundColor':'cornsilk','color':'saddlebrown'}), 
+app.layout = html.Div(style={'backgroundColor': 'cornsilk','color': 'saddlebrown'},children=[
+    html.H1('RESTAURANT HYGIENE PREDICTION', style={'textAlign': 'center','backgroundColor': 'cornsilk','color': 'saddlebrown'}), 
 
     html.Div([
         html.P('Fill out the below sections and receive the hygiene prediction for the restaurant that matches the criteria'),
